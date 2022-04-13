@@ -1,0 +1,3 @@
+
+INSERT INTO `testexecutiondetails` ( `Project`, `Environment`, `TestingType`, `DeviceType`, `BrowserDeviceName`, `TestCaseID`, `TestScriptName`, `TestDescription`, `CreatedAt`, `LastModifiedAt`) VALUES
+( 'Braun', 'Development', 'Sanity testing', 'Web', 'Chrome', 'RU-198', 'Test_shiva1', 'To verify the Account Creation functionality in sample test site', '2021-07-17 08:55:11', '2021-07-17 07:55:11'),( 'Braun', 'Development', 'Sanity testing', 'Web', 'Chrome', 'RU-197', 'Test_shiva2', 'To verify the Account Creation functionality in sample test site', '2021-07-17 08:55:11', '2021-07-17 07:55:11');

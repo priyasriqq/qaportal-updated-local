@@ -1,0 +1,54 @@
+=CONCATENATE("(""",B3,""",""",C3,""",""",D3,""",""",E3,""",""",F3,""",""",G3,""",""",H3,""",""",I3,""",""",J3,""") , ")
+
+
+/* oxo test cases */
+
+INSERT INTO `testexecutiondetails` ( `Project`, `Environment`, `TestingType`, `DeviceType`, `BrowserDeviceName`, `TestCaseID`, `TestScriptName`, `TestDescription`) VALUES
+("OXO","Staging","Build Smoke Testing","Web","Chrome","OUS23-703","TEST_OXO_ST_001-Account Creation","This script will cover Validation of New Account creation Process of oxo") , 
+("OXO","Staging","Build Smoke Testing","Web","Chrome","OUS23-764","TEST_OXO_ST_006-Registered Checkout Paypal","This script will cover Registered user checkout process with Paypal payment method of oxo") , 
+("OXO","Staging","Build Smoke Testing","Web","Chrome","OUS23-759","TEST_OXO_ST_004-Guest Checkout Creditcard","This script will cover Guest user checkout process with VISA CC payment method with different billing and Shipping address of oxo") , 
+("OXO","Staging","Build Smoke Testing","Web","Chrome","OUS23-765","TEST_OXO_ST_010-Validation of Cart Page","This script will cover Validation of Cart Page of oxo") , 
+("OXO","Staging","Build Smoke Testing","Web","Chrome","OUS23-920","TEST_OXO_ST_018-Guest Express checkout Paypal","This script will cover Guest user checkout process with Express Paypal payment method of oxo") , 
+("OXO","Staging","Build Smoke Testing","Web","Chrome","OUS23-922","Test_OXO_ST_027_RegisteredUser_Checkout with Promocode","This script will cover Checkout process with applying Promocode on Checkout Page of OXO.") , 
+("OXO","Staging","Build Smoke Testing","Web","Chrome","OUS23-761","TEST_OXO_ST_005-Validate Browse Search for Product","This script will cover Validation of Browse and search for Product  functionality Process of oxo") , 
+("OXO","Staging","Build Smoke Testing","Web","Chrome","OUS23-705","TEST_OXO_MT_016-Validate Logout","This Script will cover Logout Functionality.");
+
+/*drybar test cases*/
+
+INSERT INTO `testexecutiondetails` ( `Project`, `Environment`, `TestingType`, `DeviceType`, `BrowserDeviceName`, `TestCaseID`, `TestScriptName`, `TestDescription`) VALUES
+("Drybar","Staging","Build Smoke Testing","Web","Chrome","DRY-19","TEST_ST_DB_001_Createaccount","This script will verify the Account Creation  functionality in Drybar website") , 
+("Drybar","Staging","Build Smoke Testing","Web","Chrome","DRY-20","TEST_ST_DB_002_RegisteredUser_Checkout_visa_CreditCard","This script will cover RegisteredUser Checkout with visa CreditCard in Drybar") , 
+("Drybar","Staging","Build Smoke Testing","Web","Chrome","DRY-876","TEST_ST_DB_037_GuestUser_BrowseSearch_Checkout","This script will cover Guestuser checkout through browse search functionality") , 
+("Drybar","Staging","Build Smoke Testing","Web","Chrome","DRY-35","TEST_ST_DB_010_ForgotPassword","This script will verify Drybar Forgot Password functionality"); 
+
+/*braun us test cases*/
+INSERT INTO `testexecutiondetails` ( `Project`, `Environment`, `TestingType`, `DeviceType`, `BrowserDeviceName`, `TestCaseID`, `TestScriptName`, `TestDescription`) VALUES
+("BRAUN US","Staging","Build Smoke Testing","Web","Chrome","HHG-135","Test_ST_BHC_09_AccountCreation","This script will verify the Account Creation  functionality in Braun US website") , 
+("BRAUN US","Staging","Build Smoke Testing","Web","Chrome","HHG-129","Test_ST_BHC_03_ContentLinks","This script will verify the all foooter links functionality in Braun US website") , 
+("BRAUN US","Staging","Build Smoke Testing","Web","Chrome","HHG-132","Test_ST_BHC_06_GuestUserCategoryCC","This script will cover Guestuser Category checkout  with visa CreditCard") , 
+("BRAUN US","Staging","Build Smoke Testing","Web","Chrome","HHG-141","Test_ST_BHC_21_RegUserBrowserSearch","This script will cover RegisteredUser Checkout through browsersearchfunctionality") , 
+("BRAUN US","Staging","Build Smoke Testing","Web","Chrome","HHG-142","Test_ST_BHC_22_ValidateForgotPassword","This script will verify  Forgot Password functionality") , 
+("BRAUN US","Staging","Build Smoke Testing","Web","Chrome","HHG-161","Test_ST_BHC_43_HeaderLinks","This script will verify the all Header links functionality in BraunUSwebsite"); 
+
+
+/*revlon us test cases*/
+
+INSERT INTO `testexecutiondetails` ( `Project`, `Environment`, `TestingType`, `DeviceType`, `BrowserDeviceName`, `TestCaseID`, `TestScriptName`, `TestDescription`) VALUES
+("Revlon US","Staging","BV","Web","Chrome","REV-9","TEST_ST_RHT_001_AccountCreation","This test case validates account creation of user with valid details successfully") , 
+("Revlon US","Staging","BVT","Web","Chrome","REV-11","TEST_RHT_ST_002_ForgotPassword","This test case validates Changing of password to register user successfully") , 
+("Revlon US","Staging","BVT","Web","Chrome","REV-12","TEST_RHT_ST_003_RegisterUserProductSearch","This test case validates Search for register user for both valid and invalid data successfully") , 
+("Revlon US","Staging","BVT","Web","Chrome","REV-13","TEST_RHT_ST_004_GuestUserProductSearch","This test case validates Search for Guest user for both valid and invalid data successfully") , 
+("Revlon US","Staging","BVT","Web","Chrome","REV-14","TEST_RHT_ST_005_RegisterUserCheckoutCreditCard","This test case validates Guest user Checkout process with valid credit card successfully") , 
+("Revlon US","Staging","BVT","Web","Chrome","REV-49","TEST_RHT_ST_041_GuestUserCheckoutAMEX","This test case is to verify Guest user Checkout with AMEX card functionality in Revlon US") , 
+("Revlon US","Staging","BVT","Web","Chrome","REV-32","TEST_RHT_ST_023_ValidatingHeaderLinks","To verify the Validating Header Links functionality in Revlon web site") , 
+("Revlon US","Staging","BVT","Web","Chrome","REV-16","TEST_RHT_ST_007_CMSAndNavigation Links Validation","This test case validates CMS and Navigation links of footer page successfully");
+
+
+Added OXO project to local QAPortal
+Added BVT suite type
+Created Excel utility for insert queries
+inserted new tests for oxo staging environment 
+verified tests are visible in qa portal
+
+INSERT INTO `testexecutiondetails` (`Project`, `Environment`, `TestingType`, `DeviceType`, `BrowserDeviceName`, `TestCaseID`, `TestScriptName`, `TestDescription`, `CreatedAt`, `LastModifiedAt`) VALUES
+('Revlon UK', 'Staging', 'Build smoke testing', 'Web', 'Chrome', 'RU-124', 'Test_RUK_ST_001_Account_Creation', 'To verify the Account Creation functionality in Revlon web site', '2021-04-13 08:55:11', '2021-04-13 08:55:11');

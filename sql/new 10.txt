@@ -1,0 +1,49 @@
+
+
+
+[06:48 pm] Uday Polishetty (Lotuswave)
+    
+
+nant GenerateDiffBtwDapac -D:SourceDacpac=E:\sql_dev\production.dacpac -D:TargetDacpac=E:\sql_dev\Staging.dacpac -D:TargetDB=Diff
+
+
+
+
+-D:TargetDB=Diff
+
+
+
+nant -D:DBName=production
+ 
+nant -D:DBName=Staging
+
+nant GenerateDiffBtwDapac -D:SourceDacpac=E:\sql_dev\production.dacpac -D:TargetDacpac=E:\sql_dev\Staging.dacpac -D:TargetDB=Diff
+
+
+
+
+
+cd "C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\Common7\IDE\Extensions\Microsoft\SQLDB\DAC\130"
+    sqlpackage.exe /a:Extract /scs:"Server=ServerName;Database=DBName;User=UserName;Password=Password" /tf:Path\DBName1.dacpac
+    sqlpackage.exe /a:Extract /scs:"Server=ServerName;Database=DBName;User=UserName;Password=Password" /tf:Path\DBName2.dacpac
+    sqlpackage.exe /a:Script /sf:Path\DBName1.dacpac /TargetFile:Path\DBName2.dacpac /TargetDatabaseName:TargetDB /OutputPath:Workspace\SqlDiff.sql
+	
+	
+
+cd "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\SQLDB\DAC\150"
+
+sqlpackage.exe /a:Extract /scs:"Server=SHIVAKUMARYADAV;Database=production;User=shiva;Password=shiva" /tf:E:\sql_dev\production.dacpac
+sqlpackage.exe /a:Extract /scs:"Server=SHIVAKUMARYADAV;Database=Staging;User=shiva;Password=shiva" /tf:E:\sql_dev\Staging.dacpac
+sqlpackage.exe /a:Script /sf:E:\sql_dev\Staging.dacpac /TargetFile:E:\sql_dev\production.dacpac /TargetDatabaseName:production /OutputPath:E:\sql_dev\SqlDiff.sql
+
+
+cd "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\SQLDB\DAC\150"
+
+sqlpackage.exe /a:Extract /scs:"Server=SHIVAKUMARYADAV;Database=production;User=shiva;Password=shiva" /tf:E:\sql_dev\.dacpac
+
+sqlpackage.exe /a:Extract /scs:"Server=SHIVAKUMARYADAV;Database=production;User=shiva;Password=shiva" /tf:E:\sql_dev\production.dacpac
+
+
+sqlpackage.exe /a:Script /sf:E:\sql_dev\Staging.dacpac /TargetFile:E:\sql_dev\Staging.dacpac /TargetDatabaseName:Staging /OutputPath:E:\sql_dev\SqlDiff.sql
+
+
